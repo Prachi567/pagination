@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1
+    {
+        text-align: center;
+        color:darkgoldenrod;
+    }
+    /* a{
+        color: hotpink;
+        font-weight: bold;
+        
+    } */
+    
+     #link
+     {
+        width:400px;
+        margin: auto;
+     }
+     #link1
+     {
+        color:blueviolet;
+     }
+     /* th.a
+     {
+        color: black;
+     }
+       */
+    table
+    {
+        margin-bottom: 10px;
+        border-collapse: collapse;
+        background-color:lightcoral;
+    }
+</style>
+<body>
+
+<H1>Data from database</H1>
+<table border = '4' align="center">
+    <tr>
+        <th><a href = '/page?no=1&sort=sd_id'>Student_Id</a> </th>
+        <th><a href = '/page?no=1&sort=sd_fname'>Student_Fname</a></th>
+        <th><a href = '/page?no=1&sort=sd_lname'>Student_Lname</a></th>
+        <th><a href = '/page?no=1&sort=sd_email'>Student_Email</a></th>
+        <th><a href = '/page?no=1&sort=sd_contact'>Student_Contact</a></th>
+        <th><a href = '/page?no=1&sort=sd_collegeid'>Student_CollegeId</a></th>
+        <th><a href = '/page?no=1&sort=sd_city'>Student_City</a></th>
+        <th><a href = '/page?no=1&sort=sd_dob'>Student_DOB</a></th>
+        </tr>
+
+    <% for(i = 0;i<data.length;i++) {%>
+         <tr>
+            <td><%=data[i].sd_id %></td>
+            <td><%=data[i].sd_fname %></td>
+            <td><%=data[i].sd_lname %></td>
+            <td><%=data[i].sd_email %></td>
+            <td><%=data[i].sd_contact %></td>
+            <td><%=data[i].sd_collegeid %></td>
+            <td><%=data[i].sd_city %></td>
+            <td><%=data[i].sd_dob %></td>
+         </tr>
+    <% } %>
+</table>
+
+<div id = 'link'>
+
+   <% for(i=1;i<=div;i++) { %>
+    <!-- <a href = '/body/<%=i%>'><%=i%></a> -->
+
+   <% if(i==v1) { %>
+    <a href = '/page?no=<%=i%>&sort=<%=sort %> ' id = 'link1'><%=i%></a>
+   <% }else { %>
+    <a href = '/page?no=<%=i%>&sort=<%=sort %>' id="link2"><%=i%></a>
+   <% } %>
+   
+   <% } %>
+</div>
+</body>
+</html>
+
